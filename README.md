@@ -2,15 +2,15 @@
 - [API](https://google.com/)
 
 
-# 
+ 
+
+
+# Panel 
 ```
 http://sanai.connectvpn.tech:8080/
 admin
 admin
 ```
-
-
-https://github.com/MHSanaei/3x-ui
 
 # Test Server
 ```
