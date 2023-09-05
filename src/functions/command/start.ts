@@ -1,10 +1,9 @@
 export default async (ctx: { reply: Function }) => {
-    ctx.reply('👨🏻‍💻 لطفا گزینه مورد نظر خود را انتخاب کنید.', {
+    ctx.reply('به ربات مدیریت  پنل xui خوش آمدید: ', {
         reply_markup: {
             inline_keyboard: [
-                [{ text: '👨🏻‍💻 مشخصات سرویس 👨🏻‍💻', callback_data: 'SearchService' }],
-                [{ text: '💻 پنل مدیریت 💻 ', callback_data: 'AdminPanel' }],
-                [{ text: '🌐 کانال 🌐', url: 'https://google.com' }]
+                [{ text: '💻 وضعیت پنل 💻 ', callback_data: 'PanelStatus' }],
+                [{ text: '📊 آمار پورت ها  📊 ', callback_data: 'AdminPanel' }],
             ]
         }
     })
