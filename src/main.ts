@@ -2,7 +2,7 @@ import { BotToken } from './data/config.json';
 
 import { message } from 'telegraf/filters';
 import { Telegraf, session } from 'telegraf';
-import { SearchService, Start } from './functions/routes';
+import { AdminPanel, Moderation, SearchService, Start ,Home} from './functions/routes';
 
 const { Scense } = require('telegraf');
 const bot = new Telegraf(BotToken);
@@ -13,4 +13,7 @@ bot.launch();
 
 bot.command('start', Start);
 
+bot.action('Home',Home)
+bot.action('AdminPanel', AdminPanel);
+bot.action('Moderation', Moderation);
 bot.action('SearchService', SearchService);
