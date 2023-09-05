@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Panel } from '../../../config.json'
+import { Panel } from '../../../config.json';
 
 export default async () => {
     return new Promise((resolve, reject) => {
@@ -21,7 +21,5 @@ export default async () => {
         }).catch((error) => {
             reject({ msg: 'عملیات با خطا مواجه شد\n' + error })
         });
-    })
+    });
 }
-
-
