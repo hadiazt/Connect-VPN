@@ -1,8 +1,8 @@
 
 
 import axios from 'axios';
-import { Panel } from '../../../config.json'
-import { ConvertBytes, CPUPercent, CPUSpeed, convertSecondsToDays } from '../public'
+import { Panel } from '../../../config.json';
+import { ConvertBytes, CPUPercent, CPUSpeed, convertSecondsToDays } from '../public';
 
 export default async (token: string) => {
     return new Promise((resolve, reject) => {
@@ -55,6 +55,7 @@ export default async (token: string) => {
             const data = {
                 CPU: CPUPercent(response.data.obj.cpu),
                 CPUSpeed: CPUSpeed(response.data.obj.cpuSpeedMhz),
+                CPUCore: response.data.obj.cpuCores,
                 MemoryUsage: ConvertBytes(response.data.obj.mem.current),
                 MemoryTotal: ConvertBytes(response.data.obj.mem.total),
                 DiskUsage: ConvertBytes(response.data.obj.disk.current),
@@ -78,7 +79,5 @@ export default async (token: string) => {
 
             reject({ msg: 'عملیات با خطا مواجه شد\n' + error })
         });
-    })
+    });
 }
-
-
