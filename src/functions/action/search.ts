@@ -4,7 +4,7 @@ export default async (ctx: { editMessageText: Function }) => {
             inline_keyboard: [
                 [{ text: '📝 توسط نام 📝', callback_data: '' }],
                 [{ text: '🔗 توسط لینک 🔗', callback_data: '' }],
-                [{ text: '🏚️ بازگشت 🏚️', callback_data: '' }],
+                [{ text: '🏚️ منوی اصلی 🏚️', callback_data: '' }],
             ]
         }
     })
