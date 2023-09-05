@@ -6,5 +6,5 @@ export default async (ctx: { reply: Function }) => {
                 [{ text: '📊 آمار پورت ها  📊 ', callback_data: 'AdminPanel' }],
             ]
         }
-    })
+    });
 }
