@@ -18,6 +18,5 @@ export const ConvertBytes = (bytes: number) => {
 
 export const convertSecondsToDays = (time: number) => {
     const days = Math.round(time / (24 * 60 * 60));
-    return days;
-
+    return days
 }
