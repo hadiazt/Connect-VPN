@@ -5,18 +5,17 @@
   "main": "dist/main.js",
   "types": "dist/src/main.d.ts",
   "scripts": {
-    "build": "tsc",
-    "run": "node ./dist/main.js",
-    "start": "tsc && node ./dist/main.js",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/main.js\""
+    "start": "tsc && node ./dist/src/main.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/src/main.js\""
   },
   "dependencies": {
     "axios": "^1.5.0",
-    "beta.db": "^3.0.2",
+    "prompt-sync": "^4.2.0",
     "telegraf": "^4.12.2"
   },
   "devDependencies": {
     "@types/node": "^20.5.7",
+    "@types/prompt-sync": "^4.2.0",
     "concurrently": "^8.2.0",
     "nodemon": "^3.0.1",
     "typescript": "^5.2.2"
