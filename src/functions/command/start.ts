@@ -3,7 +3,7 @@ export default async (ctx: { reply: Function }) => {
         reply_markup: {
             inline_keyboard: [
                 [{ text: '👨🏻‍💻 مشخصات سرویس 👨🏻‍💻', callback_data: 'SearchService' }],
-                [{ text: '💻 پنل مدیریت 💻 ', callback_data: 'Managment' }],
+                [{ text: '💻 پنل مدیریت 💻 ', callback_data: 'AdminPanel' }],
                 [{ text: '🌐 کانال 🌐', url: 'https://google.com' }]
             ]
         }
