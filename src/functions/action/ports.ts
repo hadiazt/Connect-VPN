@@ -1,31 +1,31 @@
-import { Login, GetPort } from "../routes";
+import { Login, GetPorts } from "../routes";
 import { Owner } from "../../../config.json";
 
 export default async (ctx: { update: any, editMessageText: Function }) => {
     if (Owner.includes(ctx.update.callback_query.from.id)) {
         Login().then((res: { token: string }) => {
-            const id = ctx.update.callback_query.data.split('_')[1]
-            GetPort(res.token, id).then((res: {
-                msg: string
-                data: {
-                    Name: string,
-                    Port: string,
-                    Protocol: string,
-                    Download: string,
-                    Upload: string,
-                    Connection: number
-                }
+            GetPorts(res.token).then((res: {
+                msg: string, data: Array<{
+                    id: number, remark: string, port: number, protocol: string
+                }>
             }) => {
+                const Headers = [{ text: 'پورت', callback_data: 'X' }, { text: 'پروتکل', callback_data: 'X' }, { text: 'اسم', callback_data: 'X' }];
+
+                const Ports = res.data.map((item: { id: number, protocol: string, remark: string, port: number }) => [
+                    { text: item.port, callback_data: `Port_${item.id}` },
+                    { text: item.protocol, callback_data: `Port_${item.id}` },
+                    { text: item.remark, callback_data: `Port_${item.id}` },
+                ]);
+
+                const Footer = [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }];
+
+
                 ctx.editMessageText(res.msg, {
                     reply_markup: {
                         inline_keyboard: [
-                            [{ text: res.data.Name, callback_data: 'X' }, { text: 'نام', callback_data: 'X' }],
-                            [{ text: res.data.Port, callback_data: 'X' }, { text: 'پورت', callback_data: 'X' }],
-                            [{ text: res.data.Protocol, callback_data: 'X' }, { text: 'پروتکل', callback_data: 'X' }],
-                            [{ text: res.data.Download, callback_data: 'X' }, { text: 'مجموعه دانلود', callback_data: 'X' }],
-                            [{ text: res.data.Upload, callback_data: 'X' }, { text: 'مجموعه آپلود', callback_data: 'X' }],
-                            [{ text: ' دستگاه های متصل : ' + res.data.Connection, callback_data: 'X' }],
-                            [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
+                            Headers,
+                            ...Ports,
+                            Footer
                         ]
                     }
                 });
