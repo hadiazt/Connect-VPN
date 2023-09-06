@@ -5,7 +5,7 @@
         1462236176,
         123456789
     ],
-    "ConnectionLimit": 0,
+    "ConnectionLimit": 2,
     "Panel": {
         "BaseURL": "http://t1.connectvpn.tech:8080/",
         "UserName": "mani",

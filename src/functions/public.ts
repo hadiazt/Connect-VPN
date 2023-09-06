@@ -51,7 +51,7 @@ export const AutoPortChecker = (bot: { telegram: { sendMessage: Function } }) =>
         GetPorts(res.token).then((res: { data: Array<{ port: number, id: number }> }) => {
             res.data.forEach(ports => {
                 CheckPort(ports.port).then((ip: Array<{}>) => {
-                    // if (ip[0] && Number(ip.length) > Number(ConnectionLimit)) {
+                    if (ip[0] && Number(ip.length) > Number(ConnectionLimit)) {
                         Owners.forEach((Owner: number) => {
                             bot.telegram.sendMessage(Owner, `تعداد کاربران متصل به پورت ${ports.port} بیش از ${ConnectionLimit} است\n مشخصات : \n${ip.join("\n")}\nبرای غیرفعال کردن پورت روی دکمه زیر کلیک کنید`, {
                                 reply_markup: {
@@ -60,7 +60,7 @@ export const AutoPortChecker = (bot: { telegram: { sendMessage: Function } }) =>
                                     ]
                                 }
                             })
-                        // });
+                        });
                     }
                 }).catch((e: { msg: string }) => {
                     Owners.forEach((Owner: number) => {
