@@ -24,7 +24,7 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                             [{ text: res.data.Protocol, callback_data: 'X' }, { text: 'پروتکل', callback_data: 'X' }],
                             [{ text: res.data.Download, callback_data: 'X' }, { text: 'مجموعه دانلود', callback_data: 'X' }],
                             [{ text: res.data.Upload, callback_data: 'X' }, { text: 'مجموعه آپلود', callback_data: 'X' }],
-                            [{ text: ' دستگاه های متصل : ' + res.data.Connection, callback_data: 'X' }],
+                            [{ text: ' دستگاه های متصل : ' + res.data.Connection, callback_data: 'IPS_' + res.data.Port }],
                             [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
                         ]
                     }
