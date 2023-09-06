@@ -6,10 +6,11 @@ import { Start, Home, PanelStatus, PortStatus, PortsStatus, DisablePort, IPS } f
 const bot = new Telegraf(BotToken);
 bot.launch();
 
-AutoPortChecker(bot)
+setInterval(() => {
+    AutoPortChecker(bot);
+}, 180000);
+
 bot.command('start', Start);
-
-
 bot.action(/IPS_/, IPS);
 bot.action('Home', Home);
 bot.action(/Port_/, PortStatus);
