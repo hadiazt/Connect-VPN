@@ -74,7 +74,6 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                         [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
                     ]
                 }
-
             });            
         });
     } else {

@@ -75,8 +75,6 @@ export default async (token: string) => {
             }
             resolve({ msg: 'وضعیت پنل xui شما', data })
         }).catch((error) => {
-            console.log(error);
-
             reject({ msg: 'عملیات با خطا مواجه شد\n' + error })
         });
     });
