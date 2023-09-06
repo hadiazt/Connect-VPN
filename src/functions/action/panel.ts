@@ -54,6 +54,7 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                             [{ text: 'Memory Usage ', callback_data: 'X' }, { text: res.data.Xray.MemoryUsage, callback_data: 'X' }],
                             [{ text: 'Version ', callback_data: 'X' }, { text: res.data.Xray.Version, callback_data: 'X' }],
                             [{ text: 'Threads ', callback_data: 'X' }, { text: res.data.Xray.Threads, callback_data: 'X' }],
+                            [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
                         ]
                     }
                 });
