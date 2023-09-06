@@ -9,7 +9,7 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                     id: number, remark: string, port: number, protocol: string
                 }>
             }) => {
-                const Headers = [{ text: 'پورت', callback_data: 'X' }, { text: 'پروتکل', callback_data: 'X' }, { text: 'اسم', callback_data: 'X' }];
+                const Headers = [{ text: 'پورت', callback_data: 'X' }, { text: 'پروتکل', callback_data: 'X' }, { text: 'نام', callback_data: 'X' }];
 
                 const Ports = res.data.map((item: { id: number, protocol: string, remark: string, port: number }) => [
                     { text: item.port, callback_data: `Port_${item.id}` },
