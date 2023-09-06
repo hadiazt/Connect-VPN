@@ -45,7 +45,6 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                         [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
                     ]
                 }
-
             });
         });
     } else {
@@ -55,17 +54,6 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                     [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
                 ]
             }
-
         });
     }
-
-
-    // ctx.editMessageText('به ربات مدیریت  پنل xui خوش آمدید: ', {
-    //     reply_markup: {
-    //         inline_keyboard: [
-    //             [{ text: '💻 وضعیت پنل 💻 ', callback_data: 'PanelStatus' }],
-    //             [{ text: '📊 آمار پورت ها  📊 ', callback_data: 'PortStatus' }],
-    //         ]
-    //     }
-    // });
 }

@@ -16,10 +16,10 @@ export default async () => {
             }
         };
         axios.request(config).then((response) => {
-            const token = response.headers['set-cookie'][0].split(';')[0]            
-            resolve({ msg: 'عملیات با موفقیت انجام شد', token })
+            const token = response.headers['set-cookie'][0].split(';')[0];        
+            resolve({ msg: 'عملیات با موفقیت انجام شد', token });
         }).catch((error) => {
-            reject({ msg: 'عملیات با خطا مواجه شد\n' + error })
+            reject({ msg: 'عملیات با خطا مواجه شد\n' + error });
         });
     });
 }

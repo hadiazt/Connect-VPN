@@ -13,8 +13,7 @@ export default async (token: string) => {
             headers: {
                 'Content-Type': 'application/json',
                 Cookie: token
-            },
-
+            }
         };
         axios.request(config).then((response: {
             data: {
@@ -73,9 +72,9 @@ export default async (token: string) => {
                     Version: response.data.obj.xray.version
                 }
             }
-            resolve({ msg: 'وضعیت پنل xui شما', data })
+            resolve({ msg: 'وضعیت پنل xui شما', data });
         }).catch((error) => {
-            reject({ msg: 'عملیات با خطا مواجه شد\n' + error })
+            reject({ msg: 'عملیات با خطا مواجه شد\n' + error });
         });
     });
 }

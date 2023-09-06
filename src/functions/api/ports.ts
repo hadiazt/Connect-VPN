@@ -12,11 +12,10 @@ export default async (token: string) => {
                 Cookie: token
             }
         };
-
         axios.request(config).then((response: { data: { obj: Array<{}> } }) => {
-            resolve({ msg: 'وضعیت پورت های شما\nبرای دیدن وضعیت هر پورت روی آن کلیک کنید', data: response.data.obj })
+            resolve({ msg: 'وضعیت پورت های شما\nبرای دیدن وضعیت هر پورت روی آن کلیک کنید', data: response.data.obj });
         }).catch((error) => {
-            reject({ msg: 'عملیات با خطا مواجه شد\n' + error })
-        })
+            reject({ msg: 'عملیات با خطا مواجه شد\n' + error });
+        });
     });
 }
