@@ -37,8 +37,36 @@ export const CheckPort = (port: number) => {
                 reject({ msg: `Error executing command: ${stderr}` })
             }
 
-            const IPS = stdout.trim().split('\n');            
+            const IPS = stdout.trim().split('\n');
             resolve(IPS)
+        });
+    });
+}
+
+import { GetPorts, Login } from './routes';
+import { Owners } from '../../config.json'
+export const AutoPortChecker = (bot: { telegram: { sendMessage: Function } }) => {
+    Login().then((res: { token: string }) => {
+        GetPorts(res.token).then((res: { data: Array<{ port: number }> }) => {
+            res.data.forEach(ports => {
+                CheckPort(ports.port).then((ip: Array<{}>) => {
+                    if (ip.length) {
+                        console.log(ip.length);
+                    }
+                }).catch((e: { msg: string }) => {
+                    Owners.forEach((Owner: number) => {
+                        bot.telegram.sendMessage(Owner, e.msg)
+                    });
+                })
+            });
+        }).catch((e: { msg: string }) => {
+            Owners.forEach((Owner: number) => {
+                bot.telegram.sendMessage(Owner, e.msg)
+            });
+        });
+    }).catch((e: { msg: string }) => {
+        Owners.forEach((Owner: number) => {
+            bot.telegram.sendMessage(Owner, e.msg)
         });
     });
 }
