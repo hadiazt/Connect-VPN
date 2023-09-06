@@ -7,14 +7,14 @@
 
 # Panel 
 ```
-http://sanai.connectvpn.tech:8080/
-admin
-admin
+http://t1.connectvpn.tech:8080/
+mani
+mani
 ```
 
 # Test Server
 ```
-45.145.6.81
+89.185.84.230
 22
 root
 Mani@78007800
