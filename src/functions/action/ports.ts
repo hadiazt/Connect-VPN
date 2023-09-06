@@ -1,8 +1,8 @@
 import { Login, GetPorts } from "../routes";
-import { Owner } from "../../../config.json";
+import { Owners } from "../../../config.json";
 
 export default async (ctx: { update: any, editMessageText: Function }) => {
-    if (Owner.includes(ctx.update.callback_query.from.id)) {
+    if (Owners.includes(ctx.update.callback_query.from.id)) {
         Login().then((res: { token: string }) => {
             GetPorts(res.token).then((res: {
                 msg: string, data: Array<{
