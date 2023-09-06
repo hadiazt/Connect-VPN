@@ -1,6 +1,9 @@
 {
     "BotToken": "1683067885:AAEGPizLkGN8kLwouFheSS1IguUbEzN8EhY",
-    "Owner": "566753238",
+    "Owner": [
+        566753238,
+        123456789
+    ],
     "Panel":{
         "BaseURL":"http://t1.connectvpn.tech:8080/",
         "UserName":"mani",

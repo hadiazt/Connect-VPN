@@ -3,7 +3,7 @@ export default async (ctx: { editMessageText: Function }) => {
         reply_markup: {
             inline_keyboard: [
                 [{ text: '💻 وضعیت پنل 💻 ', callback_data: 'PanelStatus' }],
-                [{ text: '📊 آمار پورت ها  📊 ', callback_data: 'AdminPanel' }],
+                [{ text: '📊 آمار پورت ها  📊 ', callback_data: 'PortStatus' }],
             ]
         }
     });

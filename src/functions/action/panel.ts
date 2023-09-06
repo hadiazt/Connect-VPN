@@ -1,10 +1,9 @@
-import login from "../api/login";
-import { Status } from "../routes";
+import { Status ,Login } from "../routes";
 import { Owner } from "../../../config.json";
 
 export default async (ctx: { update: any, editMessageText: Function }) => {
-    if (String(ctx.update.callback_query.from.id) === Owner) {
-        login().then((res: { token: string }) => {
+    if (Owner.includes(ctx.update.callback_query.from.id)) {
+        Login().then((res: { token: string }) => {
             Status(res.token).then((res: {
                 msg: string, data:
                 {
@@ -59,12 +58,33 @@ export default async (ctx: { update: any, editMessageText: Function }) => {
                     }
                 });
             }).catch((e: { msg: string }) => {
-                ctx.editMessageText(e.msg)
+                ctx.editMessageText(e.msg, {
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
+                        ]
+                    }
+
+                });
             });
         }).catch((e: { msg: string }) => {
-            ctx.editMessageText(e.msg)
+            ctx.editMessageText(e.msg, {
+                reply_markup: {
+                    inline_keyboard: [
+                        [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
+                    ]
+                }
+
+            });            
         });
     } else {
-        ctx.editMessageText('شما درسترسی استفاده ندارید')
+        ctx.editMessageText('شما درسترسی استفاده ندارید', {
+            reply_markup: {
+                inline_keyboard: [
+                    [{ text: '🏠 منوی اصلی 🏠', callback_data: 'Home' }]
+                ]
+            }
+
+        });        
     }
 }
