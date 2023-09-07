@@ -1,14 +1,13 @@
 {
-    "BotToken": "1683067885:AAEGPizLkGN8kLwouFheSS1IguUbEzN8EhY",
+    "BotToken": "1683067885:AAEGPizLkGN8kLwouFheSS1IguUbEzN8EhY6635306787:AAE3gr8ET-giUA2XV8FBHzaOm6nyVJytzBk",
     "Owners": [
         566753238,
-        1462236176,
-        123456789
-    ],
+        1462236176
+	],
     "ConnectionLimit": 2,
     "Panel": {
-        "BaseURL": "http://t1.connectvpn.tech:8080/",
-        "UserName": "mani",
-        "Password": "mani"
+        "BaseURL": "http://sanai.connectvpn.tech:8080/",
+        "UserName": "admin",
+        "Password": "admin"
     }
 }
