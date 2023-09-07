@@ -3,7 +3,7 @@
 - [Panel](#panel)
 - [Test Server](#test-server)
 - [Installing Node.js Vx.x.x](#installing-nodejs)
-
+- [Running](#running)
 
 ## Installing Node.js
 
@@ -71,3 +71,17 @@ mani
 root
 Mani@78007800
 ```
+
+## Running
+
+install pm2 as global
+
+`npm install -g pm2`
+
+got to bot dir and run 
+
+`npm run build`
+
+and finally
+
+`pm2 start`
