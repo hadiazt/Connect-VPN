@@ -1,4 +1,5 @@
 export { default as Start } from './command/start';
+export { default as SetPort } from './command/set';
 
 export { default as IPS } from './action/ips';
 export { default as Home } from './action/home';
