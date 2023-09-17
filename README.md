@@ -74,6 +74,8 @@ Mani@78007800
 
 ## Running
 
+do not do change config.json data
+
 install pm2 as global
 
 `npm install -g pm2`
