@@ -76,14 +76,17 @@ Mani@78007800
 
 do not do change config.json data
 
+install net tools
+`sudo apt-get install net-tools`
+
 install pm2 as global
 
 `npm install -g pm2`
 
 got to bot dir and run 
 
-`npm run build`
+`npm install`
 
-and finally
+`npm run build`
 
 `pm2 start`
