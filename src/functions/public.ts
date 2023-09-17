@@ -44,16 +44,16 @@ export const CheckPort = (port: number) => {
 }
 
 import { GetPorts, Login } from './routes';
-import { Owners, ConnectionLimit } from '../../config.json';
+import { Owners, DefaultLimit } from '../../config.json';
 
 export const AutoPortChecker = (bot: { telegram: { sendMessage: Function } }) => {
     Login().then((res: { token: string }) => {
         GetPorts(res.token).then((res: { data: Array<{ port: number, id: number }> }) => {
             res.data.forEach(ports => {
                 CheckPort(ports.port).then((ip: Array<{}>) => {
-                    if (ip[0] && Number(ip.length) > Number(ConnectionLimit)) {
+                    if (ip[0] && Number(ip.length) > Number(DefaultLimit)) {
                         Owners.forEach((Owner: number) => {
-                            bot.telegram.sendMessage(Owner, `تعداد کاربران متصل به پورت ${ports.port} بیش از ${ConnectionLimit} است\n مشخصات : \n${ip.join("\n")}\nبرای غیرفعال کردن پورت روی دکمه زیر کلیک کنید`, {
+                            bot.telegram.sendMessage(Owner, `تعداد کاربران متصل به پورت ${ports.port} بیش از ${DefaultLimit} است\n مشخصات : \n${ip.join("\n")}\nبرای غیرفعال کردن پورت روی دکمه زیر کلیک کنید`, {
                                 reply_markup: {
                                     inline_keyboard: [
                                         [{ text: '❌ غیرفعال سازی ❌', callback_data: `Disable_${ports.id}_${ports.port}` }]
