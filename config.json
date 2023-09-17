@@ -1,10 +1,11 @@
 {
-    "BotToken": "6635306787:AAE3gr8ET-giUA2XV8FBHzaOm6nyVJytzBk",
+    "BotToken": "",
     "Owners": [
         566753238,
         1462236176
-	],
-    "ConnectionLimit": 2,
+    ],
+    "DefaultLimit": 1,
+    "CheckTimeMin": 1,
     "Panel": {
         "BaseURL": "http://sanai.connectvpn.tech:8080/",
         "UserName": "admin",
