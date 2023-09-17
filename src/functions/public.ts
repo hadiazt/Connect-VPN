@@ -45,15 +45,19 @@ export const CheckPort = (port: number) => {
 
 import { GetPorts, Login } from './routes';
 import { Owners, DefaultLimit } from '../../config.json';
+import { Database } from 'beta.db';
+const db = new Database('limit.json');
 
 export const AutoPortChecker = (bot: { telegram: { sendMessage: Function } }) => {
+    var limit: number;
     Login().then((res: { token: string }) => {
         GetPorts(res.token).then((res: { data: Array<{ port: number, id: number }> }) => {
             res.data.forEach(ports => {
                 CheckPort(ports.port).then((ip: Array<{}>) => {
-                    if (ip[0] && Number(ip.length) > Number(DefaultLimit)) {
+                    if (db.get(String(ports.port))) limit = db.get(String(ports.port)); else limit = DefaultLimit;
+                    if (ip[0] && Number(ip.length) > Number(limit)) {
                         Owners.forEach((Owner: number) => {
-                            bot.telegram.sendMessage(Owner, `تعداد کاربران متصل به پورت ${ports.port} بیش از ${DefaultLimit} است\n مشخصات : \n${ip.join("\n")}\nبرای غیرفعال کردن پورت روی دکمه زیر کلیک کنید`, {
+                            bot.telegram.sendMessage(Owner, `تعداد کاربران متصل به پورت ${ports.port} بیش از ${limit} است\n مشخصات : \n${ip.join("\n")}\nبرای غیرفعال کردن پورت روی دکمه زیر کلیک کنید`, {
                                 reply_markup: {
                                     inline_keyboard: [
                                         [{ text: '❌ غیرفعال سازی ❌', callback_data: `Disable_${ports.id}_${ports.port}` }]
