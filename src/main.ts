@@ -1,5 +1,5 @@
 import { Telegraf } from 'telegraf';
-import { BotToken } from '../config.json';
+import { BotToken, CheckTimeMin } from '../config.json';
 import { AutoPortChecker } from './functions/public';
 import { Start, Home, PanelStatus, PortStatus, PortsStatus, DisablePort, IPS, SetPort } from './functions/routes';
 
@@ -8,7 +8,7 @@ bot.launch();
 
 setInterval(() => {
     AutoPortChecker(bot);
-}, 180000);
+}, CheckTimeMin * 60000);
 
 
 bot.command('start', Start);
