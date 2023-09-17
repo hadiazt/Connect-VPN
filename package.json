@@ -2,11 +2,11 @@
   "name": "connect-vpn",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/main.js",
+  "main": "dist/src/main.js",
   "types": "dist/src/main.d.ts",
   "scripts": {
     "build": "tsc",
-    "run": "node ./dist/main.js",
+    "run": "node ./dist/src/main.js",
     "start": "tsc && node ./dist/src/main.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/src/main.js\""
   },
