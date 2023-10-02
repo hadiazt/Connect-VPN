@@ -25,7 +25,7 @@ export const convertSecondsToDays = (time: number) => {
 import { exec } from 'child_process';
 
 export const CheckPort = (port: number) => {
-    const command = `netstat -n | grep :${port} | awk \'{print $5}\' | cut -d: -f1 | sort | uniq`;
+    const command = `netstat -n | grep :${port} | awk "{print $5}" | cut -d: -f1 | sort | uniq`;
     return new Promise((resolve, reject) => {
         exec(command, (error: any, stdout: any, stderr: any) => {
 
