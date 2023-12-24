@@ -1,4 +1,4 @@
-# Connect-VPN
+# An Telegram Bot For Connect-VPN Written With Telegraf.js
 - [API Postman Export](https://google.com/)
 - [Panel](#panel)
 - [Test Server](#test-server)
