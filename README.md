@@ -1,5 +1,5 @@
 # An Telegram Bot For Connect-VPN Written With Telegraf.js
-For Managing Users And IPs In [3x-ui](https://github.com/MHSanaei/3x-ui) Panel
+For Managing Panel Status/Users/IPs In [3x-ui](https://github.com/MHSanaei/3x-ui) Panel
 - [API Postman Export](https://google.com/)
 - [Panel](#panel)
 - [Test Server](#test-server)
