@@ -7,8 +7,8 @@
     "DefaultLimit": 1,
     "CheckTimeMin": 1,
     "Panel": {
-        "BaseURL": "http://sanai.connectvpn.tech:8080/",
-        "UserName": "admin",
-        "Password": "admin"
+        "BaseURL": "",
+        "UserName": "",
+        "Password": ""
     }
 }
