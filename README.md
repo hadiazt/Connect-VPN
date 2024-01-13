@@ -58,21 +58,6 @@ nvm use 18
 nvm alias default 18
 ```
 
-## Panel 
-```
-http://t1.connectvpn.tech:8080/
-mani
-mani
-```
-
-## Test Server
-```
-89.185.84.230
-22
-root
-Mani@78007800
-```
-
 ## Running
 
 do not do change config.json data
