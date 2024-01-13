@@ -60,7 +60,7 @@ nvm alias default 18
 
 ## Running
 
-do not do change config.json data
+set your data in config.json
 
 install net tools
 `sudo apt-get install net-tools`
